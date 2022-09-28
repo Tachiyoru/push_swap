@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/28 14:25:58 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/28 16:43:25 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,16 @@ void	big_sort2(t_list **stack_a, t_list **stack_b, int size)
 	}
 }
 
+// int	check_last_two(t_list **stack_a)
+// {
+// 	t_list	*tmp;
+
+// 	tmp = (*stack_a)->next;
+// 	if (tmp->content < tmp->next->content && tmp->next->content < tmp->next->next->content)
+// 		return (1);
+// 	return (0);
+// }
+
 void	sorting_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 {
 	int	i;
@@ -118,43 +128,13 @@ void	sorting_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 	i = 0;
 	if (size == 3)
 	{
-		while (size--)
-			ft_push_ab(stack_b, stack_a);
+		ft_push_ab(stack_b, stack_a);
+		ft_push_ab(stack_b, stack_a);
+		if ((*stack_a)->content > (*stack_a)->next->content)
+			ft_swap_ab(stack_a);
+		ft_push_ab(stack_b, stack_a);
 		tri_triple(stack_a, stack_b);
 		return ;
-	}
-	if (size == 4)
-	{
-		mid = ft_mid(stack_a, size);
-		if (check_tri(stack_a) == 1)
-			big_sort2(stack_a, stack_b, size);
-		if ((*stack_a)->content < mid && check_tri(stack_a) == 0)
-		{
-			ft_push_ab(stack_a, stack_b);
-			tri_triple(stack_a, stack_b);
-			ft_push_ab(stack_b, stack_a);
-			if ((*stack_a)->content > (*stack_a)->next->content)
-				swap_or_ss(stack_a, stack_b);
-		}
-		if ((*stack_a)->content >= mid && check_tri(stack_a) == 0)
-		{
-			ft_push_ab(stack_a, stack_b);
-			tri_triple(stack_a, stack_b);
-			if ((*stack_b)->content > (*stack_a)->next->next->content)
-			{
-				ft_push_ab(stack_b, stack_a);
-				rot_or_rr(stack_a, stack_b);
-			}
-			else if ((*stack_b)->content < (*stack_a)->next->next->content)
-			{
-				ft_revrot_ab(stack_a);
-				ft_push_ab(stack_b, stack_a);
-				if ((*stack_a)->content > (*stack_a)->next->content)
-					swap_or_ss(stack_a, stack_b);
-				ft_rotate_ab(stack_a);
-				ft_rotate_ab(stack_a);
-			}
-		}
 	}
 	while (size-- && i != x)
 	{
@@ -178,7 +158,10 @@ void	sorting_b_to_a2(t_list **stack_a, t_list **stack_b, int mid, int size)
 	size = lst_size_pack(stack_a, (*stack_a)->pack);
 	x = (size / 2);
 	if (size <= 3)
+	{
 		sorting_b_to_a3(stack_a, stack_b, size);
+		return ;
+	}
 	else
 	{
 		mid = ft_mid(stack_a, size);
