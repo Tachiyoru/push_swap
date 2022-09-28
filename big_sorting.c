@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/28 16:43:25 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/28 18:22:06 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,6 @@ void	big_sort2(t_list **stack_a, t_list **stack_b, int size)
 	}
 }
 
-// int	check_last_two(t_list **stack_a)
-// {
-// 	t_list	*tmp;
-
-// 	tmp = (*stack_a)->next;
-// 	if (tmp->content < tmp->next->content && tmp->next->content < tmp->next->next->content)
-// 		return (1);
-// 	return (0);
-// }
-
 void	sorting_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 {
 	int	i;
@@ -139,7 +129,11 @@ void	sorting_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 	while (size-- && i != x)
 	{
 		if ((*stack_b)->content >= mid)
+		{
 			i += ft_push_ab(stack_b, stack_a);
+			// if ((*stack_a)->content > (*stack_a)->next->content)
+			// 	ft_swap_ab(stack_a);
+		}
 		else
 			j += rot_or_rr2(stack_b, stack_a);
 	}
