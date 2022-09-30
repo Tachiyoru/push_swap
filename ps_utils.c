@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/20 15:11:15 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 13:39:51 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,7 @@ int	ft_strlen(char *str)
 
 int	isnum(char str)
 {
-	if ((str >= '0' && str <= '9') || (str >= 'a' && str <= 'z'))
-		return (1);
-	if (str >= 'A' && str <= 'Z')
+	if (str >= '0' && str <= '9')
 		return (1);
 	else
 		return (0);

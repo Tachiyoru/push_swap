@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/26 18:12:34 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 13:42:46 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	ft_mid(t_list **stack_a, int size)
 	int		*tab;
 	int		i;
 	t_list	*tmp;
+	int		x;
 
 	tab = malloc(sizeof(int) * size);
 	tmp = *stack_a;
@@ -87,5 +88,7 @@ int	ft_mid(t_list **stack_a, int size)
 		i++;
 	}
 	ft_sort_int_tab(tab, size);
-	return (tab[(size / 2)]);
+	x = tab[(size / 2)];
+	free(tab);
+	return (x);
 }
