@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:21:00 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/27 17:45:01 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 14:19:02 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,6 @@ int	rot_or_rr(t_list **stack_a, t_list **stack_b)
 		ft_rotate_samet(stack_a, stack_b);
 	else
 		ft_rotate_ab(stack_a);
-	return (1);
-}
-
-int	rot_or_rr2(t_list **stack_b, t_list **stack_a)
-{
-	t_list	*tmp;
-
-	tmp = *stack_a;
-	ft_lstlast(tmp);
-	if ((*stack_a) && (*stack_a)->content < tmp->content)
-		ft_rotate_samet(stack_a, stack_b);
-	else
-		ft_rotate_ab(stack_b);
 	return (1);
 }
 

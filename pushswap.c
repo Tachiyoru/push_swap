@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:28:53 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 13:41:14 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 15:24:46 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ int	main(int argc, char **argv)
 	else
 		big_sort(stack_a, stack_b);
 	del_stack(stack_a);
-	del_stack(stack_b);
 	free(stack_b);
-	free(*stack_b);
 	free(stack_a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/27 18:08:05 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 14:34:22 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,45 @@ int	check_b_pack(t_list **stack_b, int size)
 		tmp = tmp->next;
 	}
 	return (0);
+}
+
+void	sorting_3b(t_list **stack_a, t_list **stack_b)
+{
+	ft_push_ab(stack_b, stack_a);
+	ft_push_ab(stack_b, stack_a);
+	if ((*stack_a)->content > (*stack_a)->next->content)
+		ft_swap_ab(stack_a);
+	ft_push_ab(stack_b, stack_a);
+	tri_triple(stack_a, stack_b);
+}
+
+void	big_sort2_2(t_list **stack_a, t_list **stack_b, int size)
+{
+	while (size--)
+	{
+		if ((*stack_a)->content > (*stack_a)->next->content)
+			swap_or_ss(stack_a, stack_b);
+		ft_push_ab(stack_b, stack_a);
+	}
+	tri_triple(stack_a, stack_b);
+}
+
+int	push_rot_ab(t_list **stack_a, t_list **stack_b, int mid, int size)
+{
+	int	j;
+	int	i;
+	int	x;
+
+	i = 0;
+	j = 0;
+	x = (size / 2);
+	while (size > 0 && size-- && j != x)
+	{
+		if ((*stack_a)->content < mid)
+			j += ft_push_ab(stack_a, stack_b);
+		else
+			i += rot_or_rr(stack_a, stack_b);
+	}
+	ft_lstpack(stack_b, j);
+	return (i);
 }

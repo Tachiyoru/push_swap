@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:29:07 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/28 13:04:52 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 14:35:43 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		ft_rotate_ab(t_list **stack);
 void	ft_rotate_samet(t_list **stack_a, t_list **stack_b);
 int		ft_revrot_ab(t_list **stack);
 void	ft_revrot_samet(t_list **stack_a, t_list **stack_b);
+int		rot_or_rr2(t_list **stack_b, t_list **stack_a);
 
 // ps_utils
 void	ft_sort_int_tab(int *tab, int size);
@@ -72,7 +73,6 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*args_to_stack(int argc, char **argv);
 
 // tri_triple
-int		rot_or_rr2(t_list **stack_b, t_list **stack_a);
 int		rot_or_rr(t_list **stack_a, t_list **stack_b);
 void	swap_or_ss(t_list **stack_a, t_list **stack_b);
 void	rev_or_rrr(t_list **stack_a, t_list **stack_b);
@@ -89,6 +89,9 @@ void	big_sort(t_list **stack_a, t_list **stack_b);
 // big_sorting2
 void	sorting_b_to_a3(t_list **stack_a, t_list **stack_b, int size);
 int		check_b_pack(t_list **stack_b, int size);
+void	sorting_3b(t_list **stack_a, t_list **stack_b);
+void	big_sort2_2(t_list **stack_a, t_list **stack_b, int size);
+int		push_rot_ab(t_list **stack_a, t_list **stack_b, int mid, int size);
 
 // sorting
 void	len_3_2(t_list **stack_a);

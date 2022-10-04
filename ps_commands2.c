@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/22 13:58:57 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 14:27:51 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,17 @@ void	ft_revrot_samet(t_list **stack_a, t_list **stack_b)
 	(*stack_a)->pile = 'a';
 	(*stack_b)->pile = 'b';
 	write(1, "rrr\n", 4);
+}
+
+int	rot_or_rr2(t_list **stack_b, t_list **stack_a)
+{
+	t_list	*tmp;
+
+	tmp = *stack_a;
+	ft_lstlast(tmp);
+	if ((*stack_a) && (*stack_a)->content < tmp->content)
+		ft_rotate_samet(stack_a, stack_b);
+	else
+		ft_rotate_ab(stack_b);
+	return (1);
 }

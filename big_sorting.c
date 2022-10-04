@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 13:21:14 by sleon            ###   ########.fr       */
+/*   Updated: 2022/09/30 14:34:33 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	sort_to_b(t_list **stack_a, t_list **stack_b, int size, int mid)
 	while (size--)
 	{
 		tmp = *stack_a;
-		if (check_med(stack_a, mid) == 1)
-			break ;
-		if (check_tri(stack_a))
+		if (check_med(stack_a, mid) == 1 || check_tri(stack_a) == 1)
 			break ;
 		if ((*stack_a)->content < mid)
 			j += ft_push_ab(stack_a, stack_b);
@@ -77,15 +75,7 @@ void	big_sort2(t_list **stack_a, t_list **stack_b, int size)
 	{
 		size = lst_size_pack(stack_b, (*stack_b)->pack);
 		if (size <= 2)
-		{
-			while (size--)
-			{
-				if ((*stack_a)->content > (*stack_a)->next->content)
-					swap_or_ss(stack_a, stack_b);
-				ft_push_ab(stack_b, stack_a);
-			}
-			tri_triple(stack_a, stack_b);
-		}
+			big_sort2_2(stack_a, stack_b, size);
 		else
 		{
 			if (check_b_pack(stack_b, size) == 0)
@@ -118,12 +108,7 @@ void	sorting_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 	i = 0;
 	if (size == 3)
 	{
-		ft_push_ab(stack_b, stack_a);
-		ft_push_ab(stack_b, stack_a);
-		if ((*stack_a)->content > (*stack_a)->next->content)
-			ft_swap_ab(stack_a);
-		ft_push_ab(stack_b, stack_a);
-		tri_triple(stack_a, stack_b);
+		sorting_3b(stack_a, stack_b);
 		return ;
 	}
 	while (size-- && i != x)
@@ -139,14 +124,9 @@ void	sorting_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 
 void	sorting_b_to_a2(t_list **stack_a, t_list **stack_b, int mid, int size)
 {
-	int	j;
 	int	i;
-	int	x;
 
-	i = 0;
-	j = 0;
 	size = lst_size_pack(stack_a, (*stack_a)->pack);
-	x = (size / 2);
 	if (size <= 3)
 	{
 		sorting_b_to_a3(stack_a, stack_b, size);
@@ -155,14 +135,7 @@ void	sorting_b_to_a2(t_list **stack_a, t_list **stack_b, int mid, int size)
 	else
 	{
 		mid = ft_mid(stack_a, size);
-		while (size > 0 && size-- && j != x)
-		{
-			if ((*stack_a)->content < mid)
-				j += ft_push_ab(stack_a, stack_b);
-			else
-				i += rot_or_rr(stack_a, stack_b);
-		}
-		ft_lstpack(stack_b, j);
+		i = push_rot_ab(stack_a, stack_b, mid, size);
 		while (i--)
 			rev_or_rrr(stack_a, stack_b);
 		sorting_b_to_a2(stack_a, stack_b, mid, size);
