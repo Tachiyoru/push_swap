@@ -6,13 +6,13 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/21 16:46:44 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/04 17:26:58 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	ft_swap_ab(t_list **stack)
+int	ft_swap_ab(t_list **stack)
 {
 	t_list	*tmp;
 	int		temp;
@@ -28,6 +28,7 @@ void	ft_swap_ab(t_list **stack)
 		write(1, "sa\n", 3);
 	if ((*stack)->pile == 'b')
 		write(1, "sb\n", 3);
+	return (1);
 }
 
 void	ft_swap_samet(t_list **stack_a, t_list **stack_b )
@@ -48,7 +49,7 @@ void	pile_chang(t_list **stack_from)
 		write(1, "pb\n", 3);
 		(*stack_from)->pile = 'b';
 	}
-	else
+	else if ((*stack_from)->pile == 'b')
 	{
 		write(1, "pa\n", 3);
 		(*stack_from)->pile = 'a';

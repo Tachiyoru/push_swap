@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:28:53 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/04 12:19:05 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/04 13:31:06 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	*stack_a = args_to_stack(argc, argv);
 	if (! *stack_a)
 		return (0);
-	if (argc < 6)
+	if (argc < 5)
 	{
 		small_sort(stack_a, stack_b);
 		del_stack(stack_a);

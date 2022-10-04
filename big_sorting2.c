@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 14:34:22 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/04 14:06:31 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,12 @@ int	check_b_pack(t_list **stack_b, int size)
 void	sorting_3b(t_list **stack_a, t_list **stack_b)
 {
 	ft_push_ab(stack_b, stack_a);
+	if ((*stack_a)->content > (*stack_a)->next->content)
+		ft_swap_ab(stack_a);
 	ft_push_ab(stack_b, stack_a);
 	if ((*stack_a)->content > (*stack_a)->next->content)
 		ft_swap_ab(stack_a);
+	tri_triple(stack_a, stack_b);
 	ft_push_ab(stack_b, stack_a);
 	tri_triple(stack_a, stack_b);
 }
