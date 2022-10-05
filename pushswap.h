@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:29:07 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 14:35:43 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 11:33:23 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	print_list(t_list *stack);
 int		main(int argc, char **argv);
 
 // ps_comands
-void	ft_swap_ab(t_list **stack);
+int		ft_swap_ab(t_list **stack);
 void	ft_swap_samet(t_list **stack_a, t_list **stack_b);
 void	pile_chang(t_list **stack_from);
 int		ft_push_ab(t_list **stack_from, t_list **stack_to);

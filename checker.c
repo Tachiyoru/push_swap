@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/04 17:35:27 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 11:32:29 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,8 @@ int	ft_revrot_samet2(t_list **stack_a, t_list **stack_b)
 	return (1);
 }
 
-void	apply(char *cmd_line, t_list **stack_a, t_list **stack_b)
+int	apply(char *cmd_line, t_list **stack_a, t_list **stack_b)
 {
-	(*stack_a)->pile = 'x';
-	if ((*stack_b))
-		(*stack_b)->pile = 'x';
 	if (ft_strcmp(cmd_line, "sa"))
 		return (ft_swap_ab(stack_a));
 	if (ft_strcmp(cmd_line, "sb"))
@@ -60,6 +57,7 @@ void	apply(char *cmd_line, t_list **stack_a, t_list **stack_b)
 		return (ft_push_ab(stack_b, stack_a));
 	if (ft_strcmp(cmd_line, "pb"))
 		return (ft_push_ab(stack_a, stack_b));
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -81,6 +79,9 @@ int	main(int argc, char **argv)
 	}
 	while (get_next_line(0, &line))
 	{
+		(*stack_a)->pile = 'x';
+		if ((*stack_b))
+			(*stack_b)->pile = 'x';
 		if (!(apply(&line, stack_a, stack_b)))
 			return (ft_error(line, stack_a, stack_b));
 		delstr(line);
