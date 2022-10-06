@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 16:00:35 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 18:35:31 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 int	stack_sorted(t_list **stack_a)
 {

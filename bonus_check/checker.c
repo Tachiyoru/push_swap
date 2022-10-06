@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 16:00:15 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 18:35:24 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	ft_stack_pile(t_list **stack_a, t_list **stack_b)
 {

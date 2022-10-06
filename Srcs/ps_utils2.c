@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 16:07:48 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 18:33:04 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	ft_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
 {

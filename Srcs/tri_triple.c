@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:21:00 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/05 15:58:51 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 18:33:37 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 int	rot_or_rr(t_list **stack_a, t_list **stack_b)
 {

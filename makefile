@@ -1,38 +1,40 @@
-CHECK_NAME	=	checker
+CHECK_NAME	=	bonus
 PS_NAME		=	push_swap
 
-CHECK_SRCS	=	checker.c		\
-				checker2.c		\
-				checker3.c		\
-				ps_commands.c	\
-				ps_commands2.c	\
-				ps_utils.c		\
-				ps_utils2.c		\
-				stack.c			\
-				check.c			\
-				error_check.c	\
-				tri_triple.c	\
-				sorting.c		\
-				big_sorting.c	\
-				big_sorting2.c	\
+CHECK_SRCS	=	bonus_check/checker.c		\
+				bonus_check/checker2.c		\
+				bonus_check/checker3.c		\
+				Srcs/ps_commands.c	\
+				Srcs/ps_commands2.c	\
+				Srcs/ps_utils.c		\
+				Srcs/ps_utils2.c		\
+				Srcs/stack.c			\
+				Srcs/check.c			\
+				Srcs/error_check.c	\
+				Srcs/tri_triple.c	\
+				Srcs/sorting.c		\
+				Srcs/big_sorting.c	\
+				Srcs/big_sorting2.c	\
 				GNL/get_next_line.c		\
 				GNL/get_next_line_utils.c	\
 
 CHECK_OBJS	= $(CHECK_SRCS:%.c=%.o)
 
-PS_SRCS		=	pushswap.c		\
-				ps_commands.c	\
-				ps_commands2.c	\
-				ps_utils.c		\
-				ps_utils2.c		\
-				stack.c			\
-				check.c			\
-				error_check.c	\
-				tri_triple.c	\
-				sorting.c		\
-				big_sorting.c	\
-				big_sorting2.c
+PS_SRCS		=	Srcs/pushswap.c		\
+				Srcs/ps_commands.c	\
+				Srcs/ps_commands2.c	\
+				Srcs/ps_utils.c		\
+				Srcs/ps_utils2.c		\
+				Srcs/stack.c			\
+				Srcs/check.c			\
+				Srcs/error_check.c	\
+				Srcs/tri_triple.c	\
+				Srcs/sorting.c		\
+				Srcs/big_sorting.c	\
+				Srcs/big_sorting2.c
 
+GREEN	=	\033[1;32m
+DEFAULT	=	\033[0m
 
 PS_OBJS	=	$(PS_SRCS:%.c=%.o)
 
@@ -48,11 +50,11 @@ all : $(PS_NAME) $(CHECK_NAME)
 
 $(PS_NAME): $(PS_OBJS)
 	$(CC) $(CFLAGS) $(PS_OBJS) -o $(PS_NAME)
-	@echo "##### push_swap compiling finished! #####"
+	@echo "$(GREEN)##### push_swap compiling finished! #####$(DEFAULT)"
 
 $(CHECK_NAME): $(CHECK_OBJS)
 	$(CC) $(CFLAGS) $(CHECK_OBJS) -o $(CHECK_NAME)
-	@echo "##### checker compiling finished! #####"
+	@echo "$(GREEN)##### checker compiling finished! #####$(DEFAULT)"
 
 clean :
 	rm -rf $(PS_OBJS)

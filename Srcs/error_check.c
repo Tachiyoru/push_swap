@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 15:46:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 13:37:10 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 18:32:53 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 int	check_int_overflow(char *argv)
 {
