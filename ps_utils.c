@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 13:39:51 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 14:07:56 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_atoi(char *str)
 	return (result *= sign);
 }
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	int	a;
 

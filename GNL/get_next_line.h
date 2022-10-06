@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:37:05 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/04 15:00:33 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 14:17:24 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define BUFFER_SIZE 10
 
-char		*get_next_line(int fd, char *line);
+char		*get_next_line(int fd);
 char		*ft_read_line(int fd, char *line);
 size_t		ft_strlen(char *s);
 char		*ft_strchr(char *s, int c);

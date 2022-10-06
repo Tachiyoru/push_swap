@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/04 17:19:12 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 15:50:34 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	stack_sorted(t_list **stack_a)
 			return (1);
 		tmp = tmp->next;
 	}
+	return (0);
 }
 
 void	delstr(char *line)
@@ -35,23 +36,25 @@ void	delstr(char *line)
 
 int	ft_strcmp(char *line, char *c)
 {
-	if (line == '\0')
+	size_t	i;
+
+	i = 0;
+	if (line[i] == '\0')
 		return (0);
-	if (c == '\0')
+	if (c[i] == '\0')
 		return (0);
-	while (line != '\0' && c != '\0')
+	while (line[i] != '\n' || c[i] != '\0')
 	{
-		if (line != c)
+		if (line[i] != c[i])
 			return (0);
-		line++;
-		c++;
+		i++;
 	}
 	return (1);
 }
 
 void	print_res(t_list **stack_a, t_list **stack_b)
 {
-	if (stack_sorted(stack_a) == 0 && !stack_b)
+	if (stack_sorted(stack_a) == 0 && !(*stack_b))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -63,7 +66,7 @@ void	print_res(t_list **stack_a, t_list **stack_b)
 
 int	ft_error(char *line, t_list **stack_a, t_list **stack_b)
 {
-	ft_strdel(line);
+	delstr(line);
 	if (stack_a)
 		del_stack(stack_a);
 	if (stack_b)

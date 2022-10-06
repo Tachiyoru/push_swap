@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:21:00 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 14:19:02 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 15:58:51 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	rot_or_rr(t_list **stack_a, t_list **stack_b)
 
 void	swap_or_ss(t_list **stack_a, t_list **stack_b)
 {
-	if ((*stack_b) && (*stack_b)->content < (*stack_b)->next->content)
+	if ((*stack_b) && (*stack_b)->next
+		&& (*stack_b)->content < (*stack_b)->next->content)
 		ft_swap_samet(stack_a, stack_b);
 	else
 		ft_swap_ab(stack_a);

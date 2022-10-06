@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 14:27:51 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 14:56:57 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_revrot_ab(t_list **stack)
 	if (!(tmp && tmp->next))
 		return (0);
 	last = tmp;
-	while (last ->next)
+	while (last->next)
 		last = last->next;
 	scndlst_to_lst = *stack;
 	while (scndlst_to_lst->next->next != NULL)
@@ -73,7 +73,7 @@ int	ft_revrot_ab(t_list **stack)
 	scndlst_to_lst->next = NULL;
 	last->next = tmp;
 	*stack = last;
-	return (0);
+	return (1);
 }
 
 void	ft_revrot_samet(t_list **stack_a, t_list **stack_b)

@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:29:07 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/05 11:33:23 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 16:13:33 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdarg.h>
 # include <stdio.h>
+# include "GNL/get_next_line.h"
 
 typedef struct s_list
 {
@@ -47,7 +48,6 @@ int		rot_or_rr2(t_list **stack_b, t_list **stack_a);
 // ps_utils
 void	ft_sort_int_tab(int *tab, int size);
 int		ft_atoi(char *str);
-int		ft_strlen(char *str);
 int		isnum(char str);
 
 // ps_utils_2
@@ -57,7 +57,8 @@ int		lst_size_pack(t_list **stack_a, int number);
 void	ft_lstpack(t_list **stack, int j);
 int		ft_mid(t_list **stack_a, int size);
 // check
-int		check_tri(t_list **stack);
+int		check_b(t_list **stack_a, t_list **stack_b);
+int		check_tri(t_list **stack_a);
 int		check_med(t_list **stack, int med);
 int		is_last_pack(t_list **stack_b, int pack);
 
@@ -98,5 +99,19 @@ void	len_3_2(t_list **stack_a);
 void	len_3(t_list **stack_a);
 void	len_4(t_list **stack_a, t_list **stack_b);
 void	small_sort(t_list **stack_a, t_list **stack_b);
+
+// checker2
+int		stack_sorted(t_list **stack_a);
+void	delstr(char *line);
+int		ft_strcmp(char *s1, char *s2);
+void	print_res(t_list **stack_a, t_list **stack_b);
+int		ft_error(char *line, t_list **stack_a, t_list **stack_b);
+
+// checker
+int		ft_swap_samet2(t_list **stack_a, t_list **stack_b );
+int		ft_rotate_samet2(t_list **stack_a, t_list **stack_b );
+int		ft_revrot_samet2(t_list **stack_a, t_list **stack_b);
+int		apply(char *cmd_line, t_list **stack_a, t_list **stack_b);
+int		main(int argc, char **argv);
 
 #endif

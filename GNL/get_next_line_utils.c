@@ -6,23 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:37:00 by sleon             #+#    #+#             */
-/*   Updated: 2022/06/11 14:24:59 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/05 14:18:57 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-size_t	ft_strlen(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strchr(char *s, int c)
 {
