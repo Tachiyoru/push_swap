@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/05 15:50:34 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 16:00:35 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,9 @@ int	ft_strcmp(char *line, char *c)
 	return (1);
 }
 
-void	print_res(t_list **stack_a, t_list **stack_b)
+void	print_res(t_list **stack_a, t_list **stack_b, char *line)
 {
+	delstr(line);
 	if (stack_sorted(stack_a) == 0 && !(*stack_b))
 		write(1, "OK\n", 3);
 	else
@@ -62,6 +63,8 @@ void	print_res(t_list **stack_a, t_list **stack_b)
 		del_stack(stack_a);
 	if (stack_b)
 		del_stack(stack_b);
+	free(stack_b);
+	free(stack_a);
 }
 
 int	ft_error(char *line, t_list **stack_a, t_list **stack_b)

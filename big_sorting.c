@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/05 16:36:38 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 16:05:12 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,7 @@ void	big_sort2(t_list **stack_a, t_list **stack_b, int size)
 			}
 			else
 			{
-				sorting_b_to_a(stack_a, stack_b, mid, size);
-				if (check_tri(stack_a) == 0)
-					sorting_b_to_a2(stack_a, stack_b, mid, size);
+				ft_b_to_a(stack_a, stack_b, mid, size);
 			}
 		}
 	}

@@ -3,6 +3,7 @@ PS_NAME		=	push_swap
 
 CHECK_SRCS	=	checker.c		\
 				checker2.c		\
+				checker3.c		\
 				ps_commands.c	\
 				ps_commands2.c	\
 				ps_utils.c		\

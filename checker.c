@@ -6,35 +6,23 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/05 15:38:11 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 16:00:15 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	ft_swap_samet2(t_list **stack_a, t_list **stack_b )
+void	ft_stack_pile(t_list **stack_a, t_list **stack_b)
 {
-	ft_swap_ab(stack_b);
-	ft_swap_ab(stack_a);
-	return (1);
-}
-
-int	ft_rotate_samet2(t_list **stack_a, t_list **stack_b )
-{
-	ft_rotate_ab(stack_a);
-	ft_rotate_ab(stack_b);
-	return (1);
-}
-
-int	ft_revrot_samet2(t_list **stack_a, t_list **stack_b)
-{
-	ft_revrot_ab(stack_a);
-	ft_revrot_ab(stack_b);
-	return (1);
+	(*stack_a)->pile = 'x';
+	if ((*stack_b))
+		(*stack_b)->pile = 'x';
+	return ;
 }
 
 int	apply(char *cmd_line, t_list **stack_a, t_list **stack_b)
 {
+	ft_stack_pile(stack_a, stack_b);
 	if (ft_strcmp(cmd_line, "sa"))
 		return (ft_swap_ab(stack_a));
 	if (ft_strcmp(cmd_line, "sb"))
@@ -80,17 +68,11 @@ int	main(int argc, char **argv)
 	line = get_next_line(0);
 	while (line)
 	{
-		(*stack_a)->pile = 'x';
-		if ((*stack_b))
-			(*stack_b)->pile = 'x';
 		if (!(apply(line, stack_a, stack_b)))
 			return (ft_error(line, stack_a, stack_b));
 		delstr(line);
 		line = get_next_line(0);
 	}
-	delstr(line);
-	print_res(stack_a, stack_b);
-	free(stack_b);
-	free(stack_a);
+	print_res(stack_a, stack_b, line);
 	return (0);
 }

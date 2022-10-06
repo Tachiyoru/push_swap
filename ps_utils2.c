@@ -6,11 +6,19 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/09/30 13:42:46 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/06 16:07:48 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+void	ft_b_to_a(t_list **stack_a, t_list **stack_b, int mid, int size)
+{
+	sorting_b_to_a(stack_a, stack_b, mid, size);
+	if (check_tri(stack_a) == 0)
+		sorting_b_to_a2(stack_a, stack_b, mid, size);
+	return ;
+}
 
 void	ft_revrot_sort4(t_list **stack_b, int j)
 {
@@ -21,23 +29,6 @@ void	ft_revrot_sort4(t_list **stack_b, int j)
 			ft_revrot_ab(stack_b);
 		}
 	}
-}
-
-int	lst_size(t_list **stack_a)
-{
-	t_list	*stack;
-	int		i;
-
-	i = 0;
-	stack = *stack_a;
-	if (!stack)
-		return (0);
-	while (stack)
-	{
-		i++;
-		stack = stack->next;
-	}
-	return (i);
 }
 
 int	lst_size_pack(t_list **stack_a, int number)
