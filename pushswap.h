@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 15:29:07 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 16:08:59 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/27 11:22:31 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,14 @@ void	ft_lstpack(t_list **stack, int j);
 int		ft_mid(t_list **stack_a, int size);
 
 // check
+int		ft_check(t_list **stack_a, t_list **stack_b, int mid);
 int		check_b(t_list **stack_a, t_list **stack_b);
 int		check_tri(t_list **stack_a);
 int		check_med(t_list **stack, int med);
 int		is_last_pack(t_list **stack_b, int pack);
 
 // error_check
+void	ft_free_stack(t_list **stack_a, t_list **stack_b);
 int		check_int_overflow(char *argv);
 int		check_double(t_list **stack);
 int		check_argv(char *argv);

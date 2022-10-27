@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:46:36 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 18:32:42 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/27 11:22:19 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	sort_to_b(t_list **stack_a, t_list **stack_b, int size, int mid)
 	while (size--)
 	{
 		tmp = *stack_a;
-		if ((check_med(stack_a, mid) == 1 || check_tri(stack_a) == 1)
-			&& check_b(stack_a, stack_b) == 1)
+		if (ft_check(stack_a, stack_b, mid) == 1)
 			break ;
 		else if ((*stack_a)->content < mid)
 			j += ft_push_ab(stack_a, stack_b);

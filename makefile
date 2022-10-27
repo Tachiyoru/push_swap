@@ -1,4 +1,4 @@
-CHECK_NAME	=	bonus
+CHECK_NAME	=	checker
 PS_NAME		=	push_swap
 
 CHECK_SRCS	=	bonus_check/checker.c		\
@@ -38,7 +38,7 @@ DEFAULT	=	\033[0m
 
 PS_OBJS	=	$(PS_SRCS:%.c=%.o)
 
-CFLAGS	=	-Wall -Werror -Wextra -g3
+CFLAGS	=	-Wall -Werror -Wextra
 
 CC		=	gcc
 
@@ -51,6 +51,8 @@ all : $(PS_NAME) $(CHECK_NAME)
 $(PS_NAME): $(PS_OBJS)
 	$(CC) $(CFLAGS) $(PS_OBJS) -o $(PS_NAME)
 	@echo "$(GREEN)##### push_swap compiling finished! #####$(DEFAULT)"
+
+bonus : $(CHECK_NAME)
 
 $(CHECK_NAME): $(CHECK_OBJS)
 	$(CC) $(CFLAGS) $(CHECK_OBJS) -o $(CHECK_NAME)

@@ -6,11 +6,18 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 15:46:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 18:32:53 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/27 11:04:30 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
+
+void	ft_free_stack(t_list **stack_a, t_list **stack_b)
+{
+	del_stack(stack_a);
+	free(stack_b);
+	free(stack_a);
+}
 
 int	check_int_overflow(char *argv)
 {

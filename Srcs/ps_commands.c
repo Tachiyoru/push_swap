@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:29:24 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 18:32:55 by sleon            ###   ########.fr       */
+/*   Updated: 2022/10/27 11:04:23 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,22 +62,20 @@ int	ft_push_ab(t_list **stack_from, t_list **stack_to)
 	t_list	*from_tmp;
 	t_list	*tmp;
 
+	if (!*stack_from)
+	{
+		if ((*stack_from)->pile == 'a')
+			ft_free_stack(stack_from, stack_to);
+		else if ((*stack_from)->pile == 'b')
+			ft_free_stack(stack_to, stack_from);
+	}
 	pile_chang(stack_from);
 	to_tmp = *stack_to;
 	from_tmp = *stack_from;
 	tmp = from_tmp;
 	from_tmp = from_tmp->next;
 	*stack_from = from_tmp;
-	if (!(to_tmp))
-	{
-		to_tmp = tmp;
-		to_tmp->next = NULL;
-		*stack_to = to_tmp;
-	}
-	else
-	{
-		tmp->next = to_tmp;
-		*stack_to = tmp;
-	}
+	tmp->next = to_tmp;
+	*stack_to = tmp;
 	return (1);
 }
