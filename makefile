@@ -47,7 +47,6 @@ all : $(PS_NAME) $(CHECK_NAME)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-
 $(PS_NAME): $(PS_OBJS)
 	$(CC) $(CFLAGS) $(PS_OBJS) -o $(PS_NAME)
 	@echo "$(GREEN)##### push_swap compiling finished! #####$(DEFAULT)"
