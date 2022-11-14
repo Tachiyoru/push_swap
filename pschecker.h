@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   pschecker.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 15:29:07 by sleon             #+#    #+#             */
-/*   Updated: 2022/11/14 14:27:27 by sleon            ###   ########.fr       */
+/*   Created: 2022/11/14 14:22:14 by sleon             #+#    #+#             */
+/*   Updated: 2022/11/14 14:23:06 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef PSCHECKER_H
+# define PSCHECKER_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -103,5 +103,22 @@ void	len_3_2(t_list **stack_a);
 void	len_3(t_list **stack_a);
 void	len_4(t_list **stack_a, t_list **stack_b);
 void	small_sort(t_list **stack_a, t_list **stack_b);
+
+// checker3
+int		ft_swap_samet2(t_list **stack_a, t_list **stack_b );
+int		ft_rotate_samet2(t_list **stack_a, t_list **stack_b );
+int		ft_revrot_samet2(t_list **stack_a, t_list **stack_b);
+
+// checker2
+int		stack_sorted(t_list **stack_a);
+void	delstr(char *line);
+int		ft_strcmp(char *s1, char *s2);
+void	print_res(t_list **stack_a, t_list **stack_b, char *line);
+int		ft_error(char *line, t_list **stack_a, t_list **stack_b);
+
+// checker
+void	ft_stack_pile(t_list **stack_a, t_list **stack_b);
+int		apply(char *cmd_line, t_list **stack_a, t_list **stack_b);
+int		main(int argc, char **argv);
 
 #endif

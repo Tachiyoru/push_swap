@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:57:26 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 18:35:35 by sleon            ###   ########.fr       */
+/*   Updated: 2022/11/14 14:26:19 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../pschecker.h"
 
 int	ft_swap_samet2(t_list **stack_a, t_list **stack_b )
 {

@@ -6,11 +6,11 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:31:12 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 18:35:31 by sleon            ###   ########.fr       */
+/*   Updated: 2022/11/14 14:26:26 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../pschecker.h"
 
 int	stack_sorted(t_list **stack_a)
 {
@@ -74,6 +74,6 @@ int	ft_error(char *line, t_list **stack_a, t_list **stack_b)
 		del_stack(stack_a);
 	if (stack_b)
 		del_stack(stack_b);
-	write(2, "Error/n", 6);
+	write(2, "Error\n", 6);
 	return (0);
 }
