@@ -1,4 +1,5 @@
 CHECK_NAME	=	checker
+
 PS_NAME		=	push_swap
 
 CHECK_SRCS	=	bonus_check/checker.c		\
@@ -40,7 +41,7 @@ PS_OBJS	=	$(PS_SRCS:%.c=%.o)
 
 CFLAGS	=	-Wall -Werror -Wextra
 
-CC		=	gcc
+CC		=	clang
 
 all : $(PS_NAME) $(CHECK_NAME)
 

@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 17:40:35 by sleon             #+#    #+#             */
-/*   Updated: 2022/10/06 18:33:34 by sleon            ###   ########.fr       */
+/*   Updated: 2022/11/14 13:01:07 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,7 @@ t_list	*args_to_stack(int argc, char **argv)
 	while (++i < argc)
 	{
 		if (check_argv(argv[i]))
-		{
-			write(2, "ERROR !\n", 8);
-			del_stack(&stack_a);
-			return (NULL);
-		}
+			return (del_stack(&stack_a), write(2, "Error\n", 6), NULL);
 		tmp = new_node(ft_atoi(argv[i]));
 		last = ft_lstlast(stack_a);
 		last->pile = 'a';
@@ -74,6 +70,6 @@ t_list	*args_to_stack(int argc, char **argv)
 		last->next = tmp;
 	}
 	if (check_double(&stack_a))
-		return (write(2, "ERROR !\n", 8), NULL);
+		return (del_stack(&stack_a), write(2, "Error\n", 6), NULL);
 	return (stack_a);
 }
